@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+    <style>
+        *{
+        margin:0;
+        border:0;
+        box-sizing:border-box;
+        }
+      
+        .container{
+        display:flex;
+        justify-content:center;
+        }
+        
+        .calculater{
+        margin-top:10%;
+        background-color:black;
+        border-radius:30px;
+        padding:10px 20px;
+        display:grid;
+        grid-template-columns:repeat(3);
+        box-shadow: 5px 5px 10px rgb(71, 68, 68),-3px -3px 10px rgb(133, 130, 130);
+
+        }
+        .calculater input{
+        grid-column:span 4;
+        padding:15px 5px;
+        background-color:black;
+        box-shadow:inset 2px 2px 5px #ccc,-2px -2px 10px #ccc;			
+        color:rgba(252, 251, 255, 0.993);
+        border-radius:20px; 
+        font-size: 1.5rem;
+        }
+        button{
+        background-color:black;
+        box-shadow:inset 2px -2px 10px #fff;	
+        color:white;
+        border-radius:20px; 
+        margin:10px;
+        height:50px;
+        width:50px;
+        }
+        .eqval{
+            height:50px;
+            width:130px;
+            grid-column:span 2;
+
+        }
+ </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculater">
+            <input type="text" placeholder="0" id="outputbox">
+            <button onclick="screen('1')">1</button>
+            <button onclick="screen('2')">2</button>
+            <button onclick="screen('3')">3</button>
+            <button onclick="screen('+')">+</button>
+            <button onclick="screen('4')">4</button>
+            <button onclick="screen('5')">5</button>
+            <button onclick="screen('6')">6</button>
+            <button onclick="screen('-')">-</button>
+            <button onclick="screen('7')">7</button>
+            <button onclick="screen('8')">8</button>
+            <button onclick="screen('9')">9</button>
+            <button onclick="screen('*')">*</button>
+            <button onclick="screen('0')">0</button> 
+            <button onclick="screen('/')">/</button>
+            <button onclick="screen('%')">%</button>
+            <button onclick="screen('.')">.</button>
+            <button onclick="del()">del</button>
+            <button onclick="cl()">cl</button>
+            <button onclick="calculat()" class="eqval">=</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        let outputdisplay = document.getElementById("outputbox");
+            function screen(num){
+                outputdisplay.value += num;
+            
+            }
+            
+            function cl() {
+                outputdisplay.value = "";
+            }
+
+            function del(){
+                outputdisplay.value = outputdisplay.value.slice(0,-1);
+            }
+           
+            function calculat(){
+                outputdisplay.value = eval( outputdisplay.value );
+            }
+
+            
+           
+            
+
+    </script>
+</body>
+</html>
